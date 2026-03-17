@@ -76,11 +76,11 @@ const LinkPage = () => {
             {url?.title}
           </span>
           <a
-            href={`https://shortify.link/${link}`}
+            href={`/${link}`}
             target="_blank"
             className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
           >
-            shortify.link/{link}
+            {window.location.host}/{link}
           </a>
           <a
             href={url?.original_url}
@@ -97,7 +97,7 @@ const LinkPage = () => {
             <Button
               variant="ghost"
               onClick={() =>
-                navigator.clipboard.writeText(`shortify.link/${link}`)
+                navigator.clipboard.writeText(`${window.location.origin}/${link}`)
               }
             >
               <Copy />
