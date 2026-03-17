@@ -16,6 +16,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { signup } from "@/db/apiAuth";
 import { BeatLoader } from "react-spinners";
 import useFetch from "@/hooks/use-fetch";
+import { UrlState } from "@/context";
 
 const Signup = () => {
   let [searchParams] = useSearchParams();
@@ -40,20 +41,22 @@ const Signup = () => {
   };
 
   const { loading, error, fn: fnSignup, data } = useFetch(signup, formData);
+  const { fetchUser } = UrlState();
 
   const [showSuccess, setShowSuccess] = useState(false);
 
   useEffect(() => {
     if (error === null && data) {
       setShowSuccess(true);
+      fetchUser();
       setTimeout(() => {
         navigate(`/dashboard?${longLink ? `createNew=${longLink}` : ""}`);
       }, 2000);
     }
-  }, [error, loading]);
+  }, [error, data]);
 
   const handleSignup = async () => {
-    setErrors([]);
+    setErrors({});
     try {
       const schema = Yup.object().shape({
         name: Yup.string().required("Name is required"),
