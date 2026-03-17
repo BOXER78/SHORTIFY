@@ -12,9 +12,9 @@ import {
 } from "./ui/card";
 import { Button } from "./ui/button";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { signup } from "SHORTIFY/src/db/apiAuth";
+import { signup } from "@/db/apiAuth";
 import { BeatLoader } from "react-spinners";
-import useFetch from "SHORTIFY/src/hooks/use-fetch";
+import useFetch from "@/hooks/use-fetch";
 
 const Signup = () => {
   let [searchParams] = useSearchParams();

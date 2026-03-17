@@ -2,8 +2,8 @@
 import { Copy, Download, LinkIcon, Trash } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
-import useFetch from "SHORTIFY/src/hooks/use-fetch";
-import { deleteUrl } from "SHORTIFY/src/db/apiUrls";
+import useFetch from "@/hooks/use-fetch";
+import { deleteUrl } from "@/db/apiUrls";
 import { BeatLoader } from "react-spinners";
 
 const LinkCard = ({ url = [], fetchUrls }) => {

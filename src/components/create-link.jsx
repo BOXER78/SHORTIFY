@@ -1,4 +1,4 @@
-import { Button } from "SHORTIFY/src/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -6,17 +6,17 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "SHORTIFY/src/components/ui/dialog";
-import { Input } from "SHORTIFY/src/components/ui/input";
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 import { Card } from "./ui/card";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import Error from "./error";
 import * as yup from "yup";
-import useFetch from "SHORTIFY/src/hooks/use-fetch";
-import { createUrl } from "SHORTIFY/src/db/apiUrls";
+import useFetch from "@/hooks/use-fetch";
+import { createUrl } from "@/db/apiUrls";
 import { BeatLoader } from "react-spinners";
-import { UrlState } from "SHORTIFY/src/context";
+import { UrlState } from "@/context";
 import { QRCode } from "react-qrcode-logo";
 
 export function CreateLink() {

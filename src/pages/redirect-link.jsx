@@ -1,6 +1,6 @@
-import { storeClicks } from "SHORTIFY/src/db/apiClicks";
-import { getLongUrl } from "SHORTIFY/src/db/apiUrls";
-import useFetch from "SHORTIFY/src/hooks/use-fetch";
+import { storeClicks } from "@/db/apiClicks";
+import { getLongUrl } from "@/db/apiUrls";
+import useFetch from "@/hooks/use-fetch";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BarLoader } from "react-spinners";

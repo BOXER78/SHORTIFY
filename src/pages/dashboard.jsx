@@ -4,17 +4,17 @@ import { useEffect, useState } from "react";
 import { BarLoader } from "react-spinners";
 import { Filter } from "lucide-react";
 
-import { Card, CardContent, CardHeader, CardTitle } from "SHORTIFY/src/components/ui/card";
-import { Input } from "SHORTIFY/src/components/ui/input";
-import { CreateLink } from "SHORTIFY/src/components/create-link";
-import LinkCard from "SHORTIFY/src/components/link-card";
-import Error from "SHORTIFY/src/components/error";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { CreateLink } from "@/components/create-link";
+import LinkCard from "@/components/link-card";
+import Error from "@/components/error";
 
-import useFetch from "SHORTIFY/src/hooks/use-fetch";
+import useFetch from "@/hooks/use-fetch";
 
-import { getUrls } from "SHORTIFY/src/db/apiUrls";
-import { getClicksForUrls } from "SHORTIFY/src/db/apiClicks";
-import { UrlState } from "SHORTIFY/src/context";
+import { getUrls } from "@/db/apiUrls";
+import { getClicksForUrls } from "@/db/apiClicks";
+import { UrlState } from "@/context";
 
 const Dashboard = () => {
   const [searchQuery, setSearchQuery] = useState("");

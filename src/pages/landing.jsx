@@ -1,5 +1,5 @@
-import { Button } from "SHORTIFY/src/components/ui/button";
-import { Input } from "SHORTIFY/src/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -7,7 +7,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "SHORTIFY/src/components/ui/accordion";
+} from "@/components/ui/accordion";
 
 const LandingPage = () => {
   const [longUrl, setLongUrl] = useState("");

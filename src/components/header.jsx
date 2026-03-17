@@ -5,15 +5,15 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "SHORTIFY/src/components/ui/dropdown-menu";
-import { logout } from "SHORTIFY/src/db/apiAuth";
-import useFetch from "SHORTIFY/src/hooks/use-fetch";
+} from "@/components/ui/dropdown-menu";
+import { logout } from "@/db/apiAuth";
+import useFetch from "@/hooks/use-fetch";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { LinkIcon, LogOut } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { BarLoader } from "react-spinners";
 import { Button } from "./ui/button";
-import { UrlState } from "SHORTIFY/src/context";
+import { UrlState } from "@/context";
 
 const Header = () => {
   const { loading, fn: fnLogout } = useFetch(logout);
