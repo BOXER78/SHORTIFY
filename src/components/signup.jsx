@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Error from "./error";
+import Success from "./success";
 import { Input } from "./ui/input";
 import * as Yup from "yup";
 import {
@@ -40,11 +41,15 @@ const Signup = () => {
 
   const { loading, error, fn: fnSignup, data } = useFetch(signup, formData);
 
+  const [showSuccess, setShowSuccess] = useState(false);
+
   useEffect(() => {
     if (error === null && data) {
-      navigate(`/dashboard?${longLink ? `createNew=${longLink}` : ""}`);
+      setShowSuccess(true);
+      setTimeout(() => {
+        navigate(`/dashboard?${longLink ? `createNew=${longLink}` : ""}`);
+      }, 2000);
     }
-
   }, [error, loading]);
 
   const handleSignup = async () => {
@@ -85,6 +90,7 @@ const Signup = () => {
           Join Shortify to start managing your links with ease.
         </CardDescription>
         {error && <Error message={error?.message} />}
+        {showSuccess && <Success message="Signup Successful! Redirecting..." />}
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
