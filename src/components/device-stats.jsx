@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+
 import {PieChart, Pie, Cell, ResponsiveContainer} from "recharts";
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];

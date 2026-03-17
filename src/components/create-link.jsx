@@ -62,7 +62,7 @@ export function CreateLink() {
     if (error === null && data) {
       navigate(`/link/${data[0].id}`);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, [error, data]);
 
   const createNewLink = async () => {

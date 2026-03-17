@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+
 import { Copy, Download, LinkIcon, Trash } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
@@ -9,20 +9,20 @@ import { BeatLoader } from "react-spinners";
 const LinkCard = ({ url = [], fetchUrls }) => {
   const downloadImage = () => {
     const imageUrl = url?.qr;
-    const fileName = url?.title; // Desired file name for the downloaded image
+    const fileName = url?.title;
 
-    // Create an anchor element
+
     const anchor = document.createElement("a");
     anchor.href = imageUrl;
     anchor.download = fileName;
 
-    // Append the anchor to the body
+
     document.body.appendChild(anchor);
 
-    // Trigger the download by simulating a click event
+
     anchor.click();
 
-    // Remove the anchor from the document
+
     document.body.removeChild(anchor);
   };
 
