@@ -26,7 +26,7 @@ const Header = () => {
       <nav className="py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3 group">
           <img src="/shortify_logo.png" className="h-10 w-10 rounded-lg group-hover:rotate-12 transition-transform duration-300" alt="Shortify Logo" />
-          <span className="text-3xl font-black bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent tracking-tighter">
+          <span className="text-3xl font-black bg-gradient-to-br from-white to-zinc-500 bg-clip-text text-transparent tracking-tighter">
             SHORTIFY
           </span>
         </Link>

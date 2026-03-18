@@ -88,7 +88,7 @@ const Login = () => {
             name="email"
             type="email"
             placeholder="Email Address"
-            className="bg-white/5 border-white/10 focus:ring-purple-500"
+            className="bg-zinc-900/50 border-zinc-800 focus:ring-zinc-500 text-zinc-100"
             onChange={handleInputChange}
           />
           {errors.email && <Error message={errors.email} />}
@@ -98,7 +98,7 @@ const Login = () => {
             name="password"
             type="password"
             placeholder="Password"
-            className="bg-white/5 border-white/10 focus:ring-purple-500"
+            className="bg-zinc-900/50 border-zinc-800 focus:ring-zinc-500 text-zinc-100"
             onChange={handleInputChange}
           />
           {errors.password && <Error message={errors.password} />}
@@ -107,9 +107,9 @@ const Login = () => {
       <CardFooter>
         <Button
           onClick={handleLogin}
-          className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 font-bold py-6 rounded-xl transition-all"
+          className="w-full bg-zinc-100 text-zinc-900 hover:bg-white font-bold py-6 rounded-xl transition-all"
         >
-          {loading ? <BeatLoader size={10} color="white" /> : "Login to Shortify"}
+          {loading ? <BeatLoader size={10} color="#18181b" /> : "Login to Shortify"}
         </Button>
       </CardFooter>
     </Card>

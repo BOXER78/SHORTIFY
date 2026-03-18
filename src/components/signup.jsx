@@ -101,7 +101,7 @@ const Signup = () => {
             name="name"
             type="text"
             placeholder="Full Name"
-            className="bg-white/5 border-white/10 focus:ring-purple-500"
+            className="bg-zinc-900/50 border-zinc-800 focus:ring-zinc-500 text-zinc-100"
             onChange={handleInputChange}
           />
           {errors.name && <Error message={errors.name} />}
@@ -111,7 +111,7 @@ const Signup = () => {
             name="email"
             type="email"
             placeholder="Email Address"
-            className="bg-white/5 border-white/10 focus:ring-purple-500"
+            className="bg-zinc-900/50 border-zinc-800 focus:ring-zinc-500 text-zinc-100"
             onChange={handleInputChange}
           />
           {errors.email && <Error message={errors.email} />}
@@ -121,7 +121,7 @@ const Signup = () => {
             name="password"
             type="password"
             placeholder="Password"
-            className="bg-white/5 border-white/10 focus:ring-purple-500"
+            className="bg-zinc-900/50 border-zinc-800 focus:ring-zinc-500 text-zinc-100"
             onChange={handleInputChange}
           />
           {errors.password && <Error message={errors.password} />}
@@ -132,7 +132,7 @@ const Signup = () => {
             name="profile_pic"
             type="file"
             accept="image/*"
-            className="bg-white/5 border-white/10 cursor-pointer file:bg-purple-600 file:border-none file:text-white file:rounded-md file:px-2 file:py-1 file:mr-4 file:hover:bg-purple-700"
+            className="bg-zinc-900/50 border-zinc-800 cursor-pointer text-zinc-100 file:bg-zinc-100 file:border-none file:text-zinc-900 file:rounded-md file:px-2 file:py-1 file:mr-4 file:hover:bg-zinc-200"
             onChange={handleInputChange}
           />
           {errors.profile_pic && <Error message={errors.profile_pic} />}
@@ -141,10 +141,10 @@ const Signup = () => {
       <CardFooter>
         <Button
           onClick={handleSignup}
-          className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 font-bold py-6 rounded-xl transition-all"
+          className="w-full bg-zinc-100 text-zinc-900 hover:bg-white font-bold py-6 rounded-xl transition-all"
         >
           {loading ? (
-            <BeatLoader size={10} color="white" />
+            <BeatLoader size={10} color="#18181b" />
           ) : (
             "Create Shortify Account"
           )}

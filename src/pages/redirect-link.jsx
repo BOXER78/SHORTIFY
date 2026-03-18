@@ -30,12 +30,12 @@ const RedirectLink = () => {
     return (
       <div className="fixed inset-0 flex flex-col items-center justify-center bg-[#05050a] z-50 p-6">
         <div className="relative mb-8">
-          <div className="absolute -inset-4 bg-purple-500/20 blur-2xl rounded-full"></div>
-          <span className="relative text-5xl font-black bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent tracking-tighter">
+          <div className="absolute -inset-4 bg-zinc-500/20 blur-2xl rounded-full"></div>
+          <span className="relative text-5xl font-black bg-gradient-to-br from-white to-zinc-500 bg-clip-text text-transparent tracking-tighter">
             SHORTIFY
           </span>
         </div>
-        <BarLoader width={200} color="#9333ea" />
+        <BarLoader width={200} color="#e4e4e7" />
         <p className="mt-8 text-gray-400 font-medium animate-pulse tracking-wide">
           Navigating to your destination...
         </p>

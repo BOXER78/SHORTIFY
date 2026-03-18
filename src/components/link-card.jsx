@@ -32,18 +32,18 @@ const LinkCard = ({ url = [], fetchUrls }) => {
     <div className="flex flex-col md:flex-row gap-5 p-6 glass-card hover:scale-[1.01] transition-all duration-300 group">
       <img
         src={url?.qr}
-        className="h-32 object-contain ring-2 ring-purple-500/50 p-1 bg-white/10 rounded-lg self-start group-hover:ring-purple-400"
+        className="h-32 object-contain ring-2 ring-zinc-500/50 p-1 bg-zinc-800 rounded-lg self-start group-hover:ring-zinc-400"
         alt="qr code"
       />
       <Link to={`/link/${url?.id}`} className="flex flex-col flex-1">
-        <span className="text-3xl font-extrabold hover:text-purple-400 transition-colors cursor-pointer tracking-tight">
+        <span className="text-3xl font-extrabold hover:text-zinc-300 transition-colors cursor-pointer tracking-tight">
           {url?.title}
         </span>
         <a
           href={`/${url?.custom_url ? url?.custom_url : url.short_url}`}
           target="_blank"
           onClick={(e) => e.stopPropagation()}
-          className="text-2xl text-purple-400 font-bold hover:underline underline-offset-4 cursor-pointer"
+          className="text-2xl text-zinc-300 font-bold hover:underline underline-offset-4 cursor-pointer"
         >
           {window.location.host}/{url?.custom_url ? url?.custom_url : url.short_url}
         </a>

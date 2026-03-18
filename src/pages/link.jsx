@@ -78,7 +78,7 @@ const LinkPage = () => {
           <a
             href={`/${link}`}
             target="_blank"
-            className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
+            className="text-3xl sm:text-4xl text-zinc-300 font-bold hover:underline cursor-pointer"
           >
             {window.location.host}/{link}
           </a>
@@ -123,7 +123,7 @@ const LinkPage = () => {
           </div>
           <img
             src={url?.qr}
-            className="w-full self-center sm:self-start ring ring-blue-500 p-1 object-contain"
+            className="w-full self-center sm:self-start ring ring-zinc-500 p-1 object-contain"
             alt="qr code"
           />
         </div>
