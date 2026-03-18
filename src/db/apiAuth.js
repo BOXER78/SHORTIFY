@@ -11,6 +11,18 @@ export async function login({email, password}) {
   return data;
 }
 
+export async function loginWithOAuth(provider) {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider,
+    options: {
+      redirectTo: `${window.location.origin}/dashboard`
+    }
+  });
+
+  if (error) throw new Error(error.message);
+  return data;
+}
+
 export async function signup({name, email, password, profile_pic}) {
   const fileName = `dp-${name.split(" ").join("-")}-${Math.random()}`;
 

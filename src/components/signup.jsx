@@ -13,7 +13,7 @@ import {
 } from "./ui/card";
 import { Button } from "./ui/button";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { signup } from "@/db/apiAuth";
+import { signup, loginWithOAuth } from "@/db/apiAuth";
 import { BeatLoader } from "react-spinners";
 import useFetch from "@/hooks/use-fetch";
 import { UrlState } from "@/context";
@@ -138,7 +138,7 @@ const Signup = () => {
           {errors.profile_pic && <Error message={errors.profile_pic} />}
         </div>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex-col gap-4">
         <Button
           onClick={handleSignup}
           className="w-full bg-zinc-100 text-zinc-900 hover:bg-white font-bold py-6 rounded-xl transition-all"
@@ -148,6 +148,19 @@ const Signup = () => {
           ) : (
             "Create Shortify Account"
           )}
+        </Button>
+
+        <div className="flex w-full items-center gap-2">
+            <span className="h-[1px] flex-1 bg-zinc-800"></span>
+            <span className="text-sm text-zinc-500">or</span>
+            <span className="h-[1px] flex-1 bg-zinc-800"></span>
+        </div>
+
+        <Button
+          onClick={() => loginWithOAuth("google")}
+          className="w-full bg-zinc-800 border-zinc-700 border text-zinc-100 hover:bg-zinc-700 font-bold py-6 rounded-xl transition-all"
+        >
+          Continue with Google
         </Button>
       </CardFooter>
     </Card>

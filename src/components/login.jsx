@@ -12,7 +12,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as Yup from "yup";
 import Error from "./error";
-import { login } from "@/db/apiAuth";
+import { login, loginWithOAuth } from "@/db/apiAuth";
 import { BeatLoader } from "react-spinners";
 import useFetch from "@/hooks/use-fetch";
 import { UrlState } from "@/context";
@@ -104,12 +104,25 @@ const Login = () => {
           {errors.password && <Error message={errors.password} />}
         </div>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex-col gap-4">
         <Button
           onClick={handleLogin}
           className="w-full bg-zinc-100 text-zinc-900 hover:bg-white font-bold py-6 rounded-xl transition-all"
         >
           {loading ? <BeatLoader size={10} color="#18181b" /> : "Login to Shortify"}
+        </Button>
+
+        <div className="flex w-full items-center gap-2">
+            <span className="h-[1px] flex-1 bg-zinc-800"></span>
+            <span className="text-sm text-zinc-500">or</span>
+            <span className="h-[1px] flex-1 bg-zinc-800"></span>
+        </div>
+
+        <Button
+          onClick={() => loginWithOAuth("google")}
+          className="w-full bg-zinc-800 border-zinc-700 border text-zinc-100 hover:bg-zinc-700 font-bold py-6 rounded-xl transition-all"
+        >
+          Continue with Google
         </Button>
       </CardFooter>
     </Card>
