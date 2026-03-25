@@ -47,9 +47,17 @@ export const storeClicks = async ({ id, originalUrl }) => {
     const res = parser.getResult();
     const device = res.type || "desktop";
 
-    const response = await fetch("https://ipapi.co/json");
-    const { city, country_name: country } = await response.json();
+    let city = "Unknown";
+    let country = "Unknown";
 
+    try {
+      const response = await fetch("https://ipwho.is/");
+      const data = await response.json();
+      city = data.city || "Unknown";
+      country = data.country || "Unknown";
+    } catch (fetchError) {
+      console.error("Error fetching location data:", fetchError);
+    }
 
     await supabase.from("clicks").insert({
       url_id: id,
@@ -58,9 +66,9 @@ export const storeClicks = async ({ id, originalUrl }) => {
       device: device,
     });
 
-
-    window.location.href = originalUrl;
   } catch (error) {
     console.error("Error recording click:", error);
+  } finally {
+    window.location.href = originalUrl;
   }
 };
